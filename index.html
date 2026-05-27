@@ -10,7 +10,7 @@ body{
     margin:0;
     overflow:hidden;
     font-family:Arial, sans-serif;
-    background:linear-gradient(to bottom,#ffb6d9,#ffddee);
+    background:linear-gradient(to bottom,#bde9ff,#e6f7ff);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -21,13 +21,14 @@ body{
     text-align:center;
     z-index:2;
     padding:20px;
+    animation:fadeIn 2s;
 }
 
 h1{
     color:white;
-    font-size:38px;
+    font-size:40px;
     margin-bottom:10px;
-    text-shadow:2px 2px 8px hotpink;
+    text-shadow:2px 2px 8px #7ccfff;
 }
 
 h2{
@@ -44,18 +45,33 @@ img{
 
 button{
     background:white;
-    color:hotpink;
+    color:#69bff8;
     border:none;
     padding:15px 30px;
     border-radius:30px;
     font-size:18px;
     cursor:pointer;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    box-shadow:0 0 15px rgba(255,255,255,0.9);
     transition:0.3s;
+    animation:glow 2s infinite;
 }
 
 button:hover{
-    transform:scale(1.05);
+    transform:scale(1.08);
+}
+
+.quote{
+    color:white;
+    margin-top:20px;
+    font-size:18px;
+    text-shadow:1px 1px 5px #7ccfff;
+}
+
+.bride{
+    color:white;
+    font-size:22px;
+    margin-bottom:15px;
+    animation:pulse 2s infinite;
 }
 
 .heart{
@@ -74,13 +90,35 @@ button:hover{
         transform:translateY(110vh);
     }
 }
+
+@keyframes glow{
+    0%{box-shadow:0 0 10px white;}
+    50%{box-shadow:0 0 25px white;}
+    100%{box-shadow:0 0 10px white;}
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Nikolinino djevojačko veče 💖</h1>
+
+    <div class="bride">
+        👰🏻‍♀️ Bride mode activated 👰🏻‍♀️
+    </div>
+
+    <h1>Nikolinino djevojačko veče 💎</h1>
     <h2>20.6.2026 • Teslić</h2>
 
     <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=900&auto=format&fit=crop" alt="Champagne">
@@ -90,6 +128,11 @@ button:hover{
     <button onclick="showMessage()">
         Klikni za slatku poruku 💌
     </button>
+
+    <p class="quote">
+        Jedna noć. Milion uspomena 🤍
+    </p>
+
 </div>
 
 <script>
@@ -97,10 +140,10 @@ function showMessage(){
     alert("Vole te tvoje cure ❣️");
 }
 
-for(let i=0;i<35;i++){
+for(let i=0;i<40;i++){
     let heart=document.createElement("div");
     heart.className="heart";
-    heart.innerHTML="💖";
+    heart.innerHTML="🤍";
 
     heart.style.left=Math.random()*100+"vw";
     heart.style.animationDuration=(3+Math.random()*5)+"s";
